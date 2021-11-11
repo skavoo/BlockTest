@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnInit } from '@angular/core';
 import { CounterService } from './counter.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CounterService } from './counter.service';
 export class AppComponent implements OnInit {
   title = 'Angular Frontend with Backend Ethereum Blockchian';
 
-  constructor(private counterService: CounterService) {}
+  constructor(public counterService: CounterService) {}
 
   ngOnInit() {}
 

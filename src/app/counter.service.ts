@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import * as Web3 from 'web3';
+import web3 from 'web3';
 
 @Injectable()
 export class CounterService {
@@ -13,8 +13,8 @@ export class CounterService {
   constructor(private http: Http) {
     this.lastTransactionID = '';
     this.http.get('assets/abiDefinition.json').subscribe((abi) => {
-      this.web3 = new Web3(
-        new Web3.providers.HttpProvider('http://localhost:8545')
+      this.web3 = new web3(
+        new web3.providers.HttpProvider('http://localhost:8545')
       );
       // this.CounterContract = this.web3.eth.contract(abi);
       this.CounterContract = this.web3.eth.contract(abi.json());
